@@ -12,7 +12,56 @@ function About() {
         linkedin: 'https://linkedin.com'
       }
     },
-    // Add 5 more developer objects with similar structure
+    {
+      name: 'Jane Smith',
+      role: 'UI/UX Designer',
+      image: 'https://via.placeholder.com/150',
+      social: {
+        twitter: 'https://twitter.com',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com'
+      }
+    },
+    {
+      name: 'Mike Johnson',
+      role: 'Frontend Developer',
+      image: 'https://via.placeholder.com/150',
+      social: {
+        twitter: 'https://twitter.com',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com'
+      }
+    },
+    {
+      name: 'Sarah Williams',
+      role: 'Backend Developer',
+      image: 'https://via.placeholder.com/150',
+      social: {
+        twitter: 'https://twitter.com',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com'
+      }
+    },
+    {
+      name: 'David Brown',
+      role: 'Full Stack Developer',
+      image: 'https://via.placeholder.com/150',
+      social: {
+        twitter: 'https://twitter.com',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com'
+      }
+    },
+    {
+      name: 'Emily Davis',
+      role: 'Project Manager',
+      image: 'https://via.placeholder.com/150',
+      social: {
+        twitter: 'https://twitter.com',
+        instagram: 'https://instagram.com',
+        linkedin: 'https://linkedin.com'
+      }
+    }
   ];
 
   return (

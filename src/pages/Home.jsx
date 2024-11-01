@@ -13,11 +13,24 @@ function Home() {
   }, []);
 
   const handleStackClick = (stack) => {
-    setSelectedStack(selectedStack?.id === stack.id ? null : stack);
+    setSelectedStack(stack);
+    setEnlargedImage(null);
   };
 
-  const handleImageClick = (image) => {
-    setEnlargedImage(enlargedImage === image ? null : image);
+  const handleImageClick = (e, image) => {
+    e.stopPropagation();
+    setEnlargedImage(image);
+  };
+
+  const handleCloseStack = (e) => {
+    e.stopPropagation();
+    setSelectedStack(null);
+    setEnlargedImage(null);
+  };
+
+  const handleCloseEnlarged = (e) => {
+    e.stopPropagation();
+    setEnlargedImage(null);
   };
 
   return (
@@ -36,7 +49,7 @@ function Home() {
           <div key={stack.id} className="image-stack card-hover">
             <div
               onClick={() => handleStackClick(stack)}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
             >
               <img
                 src={stack.images[0]}
@@ -47,43 +60,52 @@ function Home() {
                 <p className="text-gray-700">{stack.quote}</p>
               </div>
             </div>
-
-            {selectedStack?.id === stack.id && (
-              <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-                <div className="bg-white p-4 rounded-lg max-w-3xl max-h-[90vh] overflow-y-auto">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {stack.images.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`Stack image ${index + 1}`}
-                        onClick={() => handleImageClick(image)}
-                        className="w-full h-32 object-cover cursor-pointer rounded"
-                      />
-                    ))}
-                  </div>
-                  <button
-                    onClick={() => setSelectedStack(null)}
-                    className="mt-4 btn-primary"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
         ))}
       </div>
 
+      {/* Stack Modal */}
+      {selectedStack && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-40"
+          onClick={handleCloseStack}
+        >
+          <div 
+            className="bg-white p-4 rounded-lg max-w-3xl max-h-[90vh] overflow-y-auto m-4"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {selectedStack.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Stack image ${index + 1}`}
+                  onClick={(e) => handleImageClick(e, image)}
+                  className="w-full h-32 object-cover cursor-pointer rounded transition-transform hover:scale-105"
+                />
+              ))}
+            </div>
+            <button
+              onClick={handleCloseStack}
+              className="mt-4 btn-primary"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Enlarged Image Modal */}
       {enlargedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-          onClick={() => setEnlargedImage(null)}
+          onClick={handleCloseEnlarged}
         >
           <img
             src={enlargedImage}
             alt="Enlarged view"
             className="max-w-[90vw] max-h-[90vh] object-contain"
+            onClick={e => e.stopPropagation()}
           />
         </div>
       )}
