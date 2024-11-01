@@ -3,8 +3,8 @@ import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 function About() {
   const developers = [
     {
-      name: 'John Doe',
-      role: 'Lead Developer',
+      name: 'Dotayn Y.',
+      role: 'Developer/ Project Manager',
       image: 'https://via.placeholder.com/150',
       social: {
         twitter: 'https://twitter.com',
@@ -13,55 +13,55 @@ function About() {
       }
     },
     {
-      name: 'Jane Smith',
-      role: 'UI/UX Designer',
+      name: 'Dawit M.',
+      role: 'Developer/ Leader',
       image: 'https://via.placeholder.com/150',
       social: {
         twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
+        instagram: 'https://www.instagram.com/de_va09/',
         linkedin: 'https://linkedin.com'
       }
     },
     {
-      name: 'Mike Johnson',
-      role: 'Frontend Developer',
+      name: 'Dawit D.',
+      role: 'Developer/ Manager',
       image: 'https://via.placeholder.com/150',
       social: {
         twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
+        instagram: 'https://www.instagram.com/dawi_tdaniel16/',
         linkedin: 'https://linkedin.com'
       }
     },
     {
-      name: 'Sarah Williams',
-      role: 'Backend Developer',
+      name: 'Rahmet M.',
+      role: 'Developer/ Designer',
       image: 'https://via.placeholder.com/150',
       social: {
         twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
+        instagram: 'https://www.instagram.com/rahmet_me/',
         linkedin: 'https://linkedin.com'
       }
     },
-    {
-      name: 'David Brown',
-      role: 'Full Stack Developer',
-      image: 'https://via.placeholder.com/150',
-      social: {
-        twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
-        linkedin: 'https://linkedin.com'
-      }
-    },
-    {
-      name: 'Emily Davis',
-      role: 'Project Manager',
-      image: 'https://via.placeholder.com/150',
-      social: {
-        twitter: 'https://twitter.com',
-        instagram: 'https://instagram.com',
-        linkedin: 'https://linkedin.com'
-      }
-    }
+    // {
+    //   name: 'David Brown',
+    //   role: 'Full Stack Developer',
+    //   image: 'https://via.placeholder.com/150',
+    //   social: {
+    //     twitter: 'https://twitter.com',
+    //     instagram: 'https://instagram.com',
+    //     linkedin: 'https://linkedin.com'
+    //   }
+    // },
+    // {
+    //   name: 'Emily Davis',
+    //   role: 'Project Manager',
+    //   image: 'https://via.placeholder.com/150',
+    //   social: {
+    //     twitter: 'https://twitter.com',
+    //     instagram: 'https://instagram.com',
+    //     linkedin: 'https://linkedin.com'
+    //   }
+    // }
   ];
 
   return (

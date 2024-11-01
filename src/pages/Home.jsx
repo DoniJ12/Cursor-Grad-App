@@ -40,7 +40,7 @@ function Home() {
           Welcome to GCGALL
         </h1>
         <p className="text-xl text-gray-600">
-          Congratulations to all graduates! Share your memorable moments here.
+          Congratulations to all graduates! This are your memorable moments .
         </p>
       </div>
 
