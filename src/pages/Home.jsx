@@ -44,20 +44,25 @@ function Home() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {imageStacks.map((stack) => (
           <div key={stack.id} className="image-stack card-hover">
             <div
               onClick={() => handleStackClick(stack)}
-              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
+              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer h-[500px] flex flex-col"
             >
-              <img
-                src={stack.images[0]}
-                alt="Stack thumbnail"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <p className="text-gray-700">{stack.quote}</p>
+              <div className="h-[350px] overflow-hidden">
+                <img
+                  src={stack.images[0]}
+                  alt="Stack thumbnail"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 flex-grow flex flex-col justify-between">
+                <p className="text-gray-700 text-lg">{stack.quote}</p>
+                <p className="text-sm text-gray-500 mt-4">
+                  {new Date(stack.timestamp).toLocaleDateString()}
+                </p>
               </div>
             </div>
           </div>
@@ -71,20 +76,21 @@ function Home() {
           onClick={handleCloseStack}
         >
           <div 
-            className="bg-white p-4 rounded-lg max-w-3xl max-h-[90vh] overflow-y-auto m-4"
+            className="bg-white p-6 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto m-4"
             onClick={e => e.stopPropagation()}
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {selectedStack.images.map((image, index) => (
                 <img
                   key={index}
                   src={image}
                   alt={`Stack image ${index + 1}`}
                   onClick={(e) => handleImageClick(e, image)}
-                  className="w-full h-32 object-cover cursor-pointer rounded transition-transform hover:scale-105"
+                  className="w-full h-48 object-cover cursor-pointer rounded transition-transform hover:scale-105"
                 />
               ))}
             </div>
+            <p className="text-gray-700 text-lg mt-6 mb-4">{selectedStack.quote}</p>
             <button
               onClick={handleCloseStack}
               className="mt-4 btn-primary"
