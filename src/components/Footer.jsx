@@ -1,4 +1,4 @@
-import { FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaTelegram, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -9,22 +9,38 @@ function Footer() {
             <h3 className="text-xl font-bold">GCGALL</h3>
             <p className="text-sm mt-2">Graduation Gallery for GC Students</p>
           </div>
-          
+
           <div className="flex space-x-6">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
-               className="hover:text-hover-gray transition-colors">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hover-gray transition-colors"
+            >
               <FaTwitter size={24} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-               className="hover:text-hover-gray transition-colors">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hover-gray transition-colors"
+            >
               <FaInstagram size={24} />
             </a>
-            <a href="https://t.me" target="_blank" rel="noopener noreferrer"
-               className="hover:text-hover-gray transition-colors">
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hover-gray transition-colors"
+            >
               <FaTelegram size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-               className="hover:text-hover-gray transition-colors">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hover-gray transition-colors"
+            >
               <FaLinkedin size={24} />
             </a>
           </div>
@@ -37,4 +53,4 @@ function Footer() {
   );
 }
 
-export default Footer; 
+export default Footer;
